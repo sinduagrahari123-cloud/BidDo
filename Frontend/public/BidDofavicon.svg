@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#050816"/>
+
+  <!-- Letter B -->
+  <path
+    d="M120 100H240C305 100 340 135 340 185C340 220 320 245 290 258C328 268 355 300 355 345C355 405 312 440 240 440H120Z"
+    fill="white"/>
+
+  <!-- Cutout -->
+  <path
+    d="M170 150H230C265 150 285 165 285 195C285 225 265 240 230 240H170ZM170 285H235C275 285 300 305 300 340C300 375 275 390 235 390H170Z"
+    fill="#050816"/>
+
+  <!-- D Accent -->
+  <path
+    d="M300 150C375 150 430 205 430 280C430 355 375 410 300 410V360C345 360 380 325 380 280C380 235 345 200 300 200Z"
+    fill="url(#grad)"/>
+
+  <!-- Auction Gavel -->
+  <g transform="translate(248 250) rotate(-40)">
+    <rect x="-12" y="-58" width="24" height="85" rx="8" fill="#38BDF8"/>
+    <rect x="-34" y="-82" width="68" height="22" rx="6" fill="#38BDF8"/>
+    <rect x="-34" y="24" width="68" height="22" rx="6" fill="#38BDF8"/>
+  </g>
+</svg>
