@@ -45,7 +45,7 @@ function BidderControls({ auction, socket, currentMember }) {
           <button
             key={inc}
             onClick={() => placeBid(minRequired + inc)}
-            className="bg-gray-200 hover:bg-gray-300 text-sm px-3 py-1 rounded"
+            className="bg-gray-200 hover:bg-gray-300 text-shadow-mist-950 px-3 py-1 rounded"
           >
             +₹{inc}
           </button>
