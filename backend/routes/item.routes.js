@@ -1,16 +1,55 @@
 import express from "express";
-import { createItem,nominateItem,markItemUnsold } from "../controllers/item.controller.js";
-import {protect} from "../middleware/auth.middleware.js"
 
-const itemRoutes = (io) =>{
+import {
+    createItem,
+    bulkCreateManualItems,
+    nominateItem,
+    markItemUnsold
+} from "../controllers/item.controller.js";
+
+import { protect } from "../middleware/auth.middleware.js";
+
+
+const itemRoutes = (io) => {
     const router = express.Router();
 
-router.post("/create",protect,createItem)
-router.post('/nominate', protect, nominateItem(io));
-router.post('/mark-unsold', protect, markItemUnsold(io));
 
-return router;
+    // Create single item
+    router.post(
+        "/create",
+        protect,
+        createItem
+    );
 
+
+    // ==================================================
+    // NEW: Add multiple manual participants
+    // ==================================================
+    router.post(
+        "/bulk-create-manual",
+        protect,
+        bulkCreateManualItems
+    );
+
+
+    // Nominate item
+    router.post(
+        "/nominate",
+        protect,
+        nominateItem(io)
+    );
+
+
+    // Mark item unsold
+    router.post(
+        "/mark-unsold",
+        protect,
+        markItemUnsold(io)
+    );
+
+
+    return router;
 };
+
 
 export default itemRoutes;
